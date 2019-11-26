@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <!-- <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-    <script type="text/babel" src="index.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script> -->
+    <script type="text/javascript" src="index.js"></script>
     <script src="app.js"></script>
     <title>To-Do List</title>
 </head>
 <body>
-  <h1>To-Do List</h1>
-  <div id="list">
-    <div class="item">asdf</div>
-    <div class="item">asdf</div>
-    <div class="item">asdf</div>
+  <nav>
+    <h1>To-Do List <button id="new-item">New +</button><button id="new-item">Clear</button></h1>
+  </nav>
+  <div id="list" class="ui-sortable">
+    <div class="item">
+      <i class="material-icons drag-indicator">drag_indicator</i>
+      <span class="text">Item 1</span>
+      <i class="material-icons check-box">check_box</i>
+    </div>
+    <div class="item">
+      <i class="material-icons drag-indicator">drag_indicator</i>
+      <span class="text">Item 2</span>
+      <i class="material-icons check-box">check_box</i>
+    </div>
+    <div class="item">
+      <i class="material-icons drag-indicator">drag_indicator</i>
+      <span class="text">Item 3</span>
+      <i class="material-icons check-box">check_box</i>
+    </div>
   </div>
 </body>
 </html>

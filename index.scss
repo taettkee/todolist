@@ -1,21 +1,111 @@
-$bg-color: #ddd;
+$bg-color: #fafafa;
 $fg-color: #fff;
+$fg-hov-color: #fdfdfd;
+$fg-act-color: #fbfbfb;
 $txt-color: #111;
+$sh-color: #eee;
+
+*{
+  font-family: 'Roboto', sans-serif;
+}
 
 body{
   background-color: $bg-color;
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
+}
+
+html,body{
+  overflow-x: hidden;
 }
 
 h1,h2,h3,h4,h5,h6{
   font-weight: normal;
 }
 
+%component{
+  border-radius: 1000px;
+  box-shadow: 0 0 10px 0px $sh-color;
+  &:hover{
+    background-color: $fg-hov-color;
+  }
+  &:active{
+    background-color: $fg-act-color;
+  }
+  transition: background 0.25s;
+}
+
+button{
+  @extend %component;
+  background-color: $fg-color;
+  border:0;
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  outline: 0;
+}
+
+i.material-icons{
+  vertical-align: middle;
+
+}
+nav{
+  // background-color: $fg-color;
+  // border-radius: 10px;
+  // padding: 16px;
+  // margin: 20px 0px;
+  h1{
+    font-size: 40px;
+    // margin: 0;
+    button{
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+}
+
 #list{
+
   .item{
+    @extend %component;
+    box-sizing: border-box;
     background-color: $fg-color;
-    padding: 10px;
+    padding: 16px;
     width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+    // border: 1px solid #ddd;
+
+    i{
+      user-select: none;
+      *{
+        margin: 2px 0;
+      }
+      &.drag-indicator{
+        cursor: grab;
+        user-select: none;
+        &:active{
+          cursor: grabbing;
+        }
+      }
+
+      &.check-box{
+        cursor: pointer;
+      }
+    }
+
+    .text{
+      flex-grow: 1;
+      font-size: 18px;
+    }
+
+  }
+
+  .placeholder{
+    background-color: $sh-color;
+    width: 100%;
+    height: 56px;
+    border-radius: 1000px;
+    margin-bottom: 10px;
   }
 }

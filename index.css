@@ -1,17 +1,88 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
 body {
-  background-color: #ddd;
+  background-color: #fafafa;
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-#list .item {
+#list .item, button {
+  border-radius: 1000px;
+  box-shadow: 0 0 10px 0px #eee;
+  transition: background 0.25s;
+}
+#list .item:hover, button:hover {
+  background-color: #fdfdfd;
+}
+#list .item:active, button:active {
+  background-color: #fbfbfb;
+}
+
+button {
   background-color: #fff;
-  padding: 10px;
+  border: 0;
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  outline: 0;
+}
+
+i.material-icons {
+  vertical-align: middle;
+}
+
+nav h1 {
+  font-size: 40px;
+}
+nav h1 button {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+#list .item {
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 16px;
   width: 100%;
+  display: flex;
+  margin-bottom: 10px;
+}
+#list .item i {
+  user-select: none;
+}
+#list .item i * {
+  margin: 2px 0;
+}
+#list .item i.drag-indicator {
+  cursor: grab;
+  user-select: none;
+}
+#list .item i.drag-indicator:active {
+  cursor: grabbing;
+}
+#list .item i.check-box {
+  cursor: pointer;
+}
+#list .item .text {
+  flex-grow: 1;
+  font-size: 18px;
+}
+#list .placeholder {
+  background-color: #eee;
+  width: 100%;
+  height: 56px;
+  border-radius: 1000px;
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=index.css.map */
