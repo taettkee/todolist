@@ -10,5 +10,5 @@ async function fetchData (url, info) {
     let data = await response.json()
     return data
 }
-let data = await fetchData('https://taettkee.github.io/todolist/api/info', {'giveme' : ''})
+let data = await fetchData('https://taettkee.github.io/todolist/', {'giveme' : ''})
 console.log(data)
