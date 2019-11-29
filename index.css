@@ -1,15 +1,38 @@
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #ccc;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #eee;
+}
+
 * {
   font-family: "Roboto", sans-serif;
+  transition: background 0.25s, color 0.25s;
 }
 
 body {
-  background-color: #fafafa;
+  background-color: #eaeaea;
   margin: 0;
-  padding: 0 20px;
 }
 
 html, body {
   overflow-x: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -18,14 +41,13 @@ h1, h2, h3, h4, h5, h6 {
 
 #list .item, button {
   border-radius: 1000px;
-  box-shadow: 0 0 10px 0px #eee;
-  transition: background 0.25s;
+  box-shadow: 0 0 10px 0px #ddd;
 }
 #list .item:hover, button:hover {
-  background-color: #fdfdfd;
+  background-color: #fafafa;
 }
 #list .item:active, button:active {
-  background-color: #fbfbfb;
+  background-color: #f6f6f6;
 }
 
 button {
@@ -41,6 +63,9 @@ i.material-icons {
   vertical-align: middle;
 }
 
+nav {
+  margin: 0 20px;
+}
 nav h1 {
   font-size: 40px;
 }
@@ -49,13 +74,49 @@ nav h1 button {
   margin-right: 5px;
 }
 
+#list-tab-container {
+  margin: 0 20px;
+  user-select: none;
+}
+#list-tab-container .list-tab {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 14px;
+  font-size: 18px;
+  display: inline-block;
+  background: linear-gradient(to bottom, #fff, #f5f5f5);
+  cursor: pointer;
+}
+#list-tab-container .list-tab:hover {
+  background: #fff;
+}
+#list-tab-container .list-tab:active {
+  background: #fafafa;
+}
+
+#list {
+  background-color: #f5f5f5;
+  padding: 20px 20px;
+  min-height: 100%;
+  overflow: visible;
+}
 #list .item {
   box-sizing: border-box;
   background-color: #fff;
   padding: 16px;
   width: 100%;
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  cursor: text;
+}
+#list .item.completed .text {
+  text-decoration: line-through;
+}
+#list .item.completed * {
+  color: grey;
+}
+#list .item.completed:hover * {
+  color: #111;
 }
 #list .item i {
   user-select: none;
@@ -70,17 +131,21 @@ nav h1 button {
 #list .item i.drag-indicator:active {
   cursor: grabbing;
 }
-#list .item i.check-box {
+#list .item i.check-box, #list .item i.close {
   cursor: pointer;
 }
 #list .item .text {
   flex-grow: 1;
   font-size: 18px;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
 }
 #list .placeholder {
-  background-color: #eee;
+  background-color: #ddd;
+  box-shadow: 0 0 50px 5px #ddd;
   width: 100%;
-  height: 56px;
+  height: 51px;
   border-radius: 1000px;
   margin-bottom: 10px;
 }
